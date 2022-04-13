@@ -7,7 +7,7 @@
 	}
 	],
 	"scopeName" : "source.kind",
-	"uuid" : "",
+	"uuid" : "kind",
 	"repository" : {
 	"main" : {
 		"patterns" : [

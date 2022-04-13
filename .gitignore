@@ -2,6 +2,7 @@ node_modules
 *.vsix
 .vscode
 .vscodeignore
+.gitattributes
 CHANGELOG.md
 linguagem.txt
 vsc-extension-quickstart.md

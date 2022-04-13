@@ -1,8 +1,9 @@
 {
-    "name": "Kind",
-    "displayName": "Kind",
-    "description": "A minimal, efficient and practical programming language that aims to rethink functional programming from the scratch, and make it right.",
-    "version": "0.1.0",
+    "name": "kind-syntax",
+    "displayName": "Kind Syntax",
+    "description": "A minimal, efficient and practical programming language",
+    "version": "0.1.1",
+    "license": "SEE LICENSE",
     "engines": {
         "vscode": "^1.61.0"
     },
@@ -11,15 +12,15 @@
     ],
     "contributes": {
         "languages": [{
-            "id": "Kind",
-            "aliases": ["Kind", "kind"],
+            "id": "kind",
+            "aliases": ["kind"],
             "extensions": [".kind"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "Kind",
+            "language": "kind",
             "scopeName": "source.kind",
-            "path": "./syntaxes/kind.tmLanguage.json"
+            "path": "./syntaxes/kind.tmLanguage.plist"
         }]
     },
     "homepage": "https://github.com/savioscmendes/vscode-kind-syntax",
@@ -41,6 +42,6 @@
     },
     "keywords": [
         "kind",
-        "syntax"
+        "Syntax"
     ]
 }
