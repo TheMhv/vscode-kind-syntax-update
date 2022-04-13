@@ -32,11 +32,11 @@
         </dict>
         <dict>
           <key>include</key>
-          <string>#punctuations</string>
+          <string>#punctuation</string>
         </dict>
         <dict>
           <key>include</key>
-          <string>#values</string>
+          <string>#type</string>
         </dict>
         <dict>
           <key>include</key>
@@ -98,7 +98,7 @@
         </dict>
         <dict>
           <key>match</key>
-          <string>(\bsucc\b|\brefl\b|\bzero\b|\bcomm\b|\bbind\b|\bpure\b|\bnil\b|\bpred\b|\badd\b|\bcons\b|\bnew\b|\bhead\b|\btail\b|\bfst\b|\bsnd\b|\bsize\b|\bapply\b|\bkay\b|\bmap\b|\bsum\b|\bdefault\b|\b_\b|\bsome\b|\bnone\b|\bconcat\b|\brewrite\b|\sub\b|\bmul\b|\bdiv\b|\bltn\b|\blte\b|\beql\b|\bgte\b|\band\b|\bor\b|\bvalues\b|\bobj\b)</string>
+          <string>(\brefl\b|\bcomm\b|\bbind\b|\bpure\b|\bnil\b|\bpred\b|\badd\b|\bcons\b|\bnew\b|\bhead\b|\btail\b|\bfst\b|\bsnd\b|\bsize\b|\bapply\b|\bkay\b|\bmap\b|\bsum\b|\bdefault\b|\b_\b|\bsome\b|\bnone\b|\bconcat\b|\brewrite\b|\sub\b|\bmul\b|\bdiv\b|\bltn\b|\blte\b|\beql\b|\bgte\b|\band\b|\bor\b|\bvalue\b|\bobj\b)</string>
           <key>name</key>
           <string>keyword.auxiliar.kind</string>
         </dict>
@@ -107,6 +107,18 @@
           <string>(\bif\s|\bthen\b|\belse\b|\bcase\b|for\s|\sin\s|\with\s)</string>
           <key>name</key>
           <string>keyword.conditional.kind</string>
+        </dict>
+         <dict>
+          <key>match</key>
+          <string>(\bNat\b)</string>
+          <key>name</key>
+          <string>keyword.number.kind</string>
+        </dict>
+        <dict>
+          <key>match</key>
+          <string>(\bsucc\b|\bzero\b)</string>
+          <key>name</key>
+          <string>keyword.number.auxiliar.kind</string>
         </dict>
        </array>
     </dict>
@@ -152,7 +164,7 @@
         </dict>
        </array>
     </dict>
-    <key>punctuations</key>
+    <key>punctuation</key>
     <dict>
       <key>patterns</key>
       <array> 
@@ -174,77 +186,71 @@
           <key>name</key>
           <string>punctuation.kind</string>
         </dict>
-        <dict>
-          <key>match</key>
-          <string>(\b.\b)</string>
-          <key>name</key>
-          <string>punctuation.kind</string>
-        </dict>
        </array>
     </dict>
-    <key>values</key>
+    <key>type</key>
     <dict>
       <key>patterns</key>
       <array> 
         <dict>
           <key>match</key>
-          <string>(\bNat\s)</string>
+          <string>(\bNat\b)</string>
           <key>name</key>
-          <string>values.numeric.nat.kind</string>
+          <string>type.numeric.nat.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bU8\b|\bU16\b|\bU32\b|\bU64\b|\bU128\b|\bU256\b)</string>
           <key>name</key>
-          <string>values.numeric.nat.u.kind</string>
+          <string>type.numeric.nat.u.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bF32\b|\bF64\b)</string>
           <key>name</key>
-          <string>values.numeric.float.kind</string>
+          <string>type.numeric.float.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bList\b)</string>
           <key>name</key>
-          <string>values.polymorphic.list.kind</string>
+          <string>type.polymorphic.list.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bPair\b)</string>
           <key>name</key>
-          <string>values.polymorphic.pair.kind</string>
+          <string>type.polymorphic.pair.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bArray\b)</string>
           <key>name</key>
-          <string>values.polymorphic.array.kind</string>
+          <string>type.polymorphic.array.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bI8\b|\bI16\b|\bI32\b|\bI64\b|\bI128\b|\bI256\b)</string>
           <key>name</key>
-          <string>values.numeric.integer.kind</string>
+          <string>type.numeric.integer.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bBool\b)</string>
           <key>name</key>
-          <string>values.boolean.kind</string>
+          <string>type.boolean.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\btrue\b)</string>
           <key>name</key>
-          <string>values.boolean.true.kind</string>
+          <string>type.boolean.true.kind</string>
         </dict>
         <dict>
           <key>match</key>
           <string>(\bfalse\b)</string>
           <key>name</key>
-          <string>values.boolean.false.kind</string>
+          <string>type.boolean.false.kind</string>
         </dict>
        </array>
     </dict>

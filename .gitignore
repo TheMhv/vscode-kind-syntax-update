@@ -5,4 +5,8 @@ node_modules
 .gitattributes
 CHANGELOG.md
 linguagem.txt
+linguagem2.txt
 vsc-extension-quickstart.md
+package-lock.json
+test.kind
+kind.tmLanguagetest.json
