@@ -1,0 +1,7 @@
+node_modules
+*.vsix
+.vscode
+.vscodeignore
+CHANGELOG.md
+linguagem.txt
+vsc-extension-quickstart.md

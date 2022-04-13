@@ -1,0 +1,196 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "kind",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#values"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#punctuations"
+		}
+		
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			},
+			{
+				"name": "keyword.control.auxiliar.kind",
+				"match": "\\bopen\\b"
+			},
+			{
+				"name": "keyword.conditional.kind",
+				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
+			},
+			{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			},
+      {
+        "match" : "(\\btype\\s|\\blet\\s|\\bdef\\s)",
+        "name" : "keyword.other.kind"
+      },
+      {
+        "match" : "(\\bopen\\s)",
+        "name" : "keyword.control.auxiliar.kind"
+      },
+      {
+        "match" : "(\\bsucc\\b|\\brefl\\b|\\bzero\\b|\\bcomm\\b|\\bbind\\b|\\bpure\\b|\\bnil\\b|\\bpred\\b|\\badd\\b|\\bcons\\b|\\bnew\\b|\\bhead\\b|\\btail\\b|\\bfst\\b|\\bsnd\\b|\\bsize\\b|\\bapply\\b|\\bkay\\b|\\bmap\\b|\\bsum\\b|\\bdefault\\b|\\b_\\b|\\bsome\\b|\\bnone\\b|\\bconcat\\b|\\brewrite\\b|\\sub\\b|\\bmul\\b|\\bdiv\\b|\\bltn\\b|\\blte\\b|\\beql\\b|\\bgte\\b|\\band\\b|\\bor\\b|\\bvalue\\b|\\bobj\\b)",
+        "name" : "keyword.auxiliar.kind"
+      },
+      {
+        "match" : "(\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s)",
+        "name" : "keyword.conditional.kind"
+      }
+  
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.kind",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.kind",
+					"match": "\\\\."
+				}
+			]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			},
+			{
+				"name": "keyword.control.auxiliar.kind",
+				"match": "\\bopen\\b"
+			},
+			{
+				"name": "keyword.conditional.kind",
+				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
+			},
+			{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			}
+			]
+		},
+		"operator": {
+			"patterns": [
+				{
+					"match": "(\\-|\\+|\\*|\\/|%\\/%|%%|%\\*%|%in%|%o%|%x%|\\^)",
+					"name": "operator.arithmetic.kind"
+				},
+				{
+					"match": "(=|<-|<<-|->|->>)",
+					"name": "operator.assignment.kind"
+				},
+				{
+					"match": "(==|!=|<>|<|>|<=|>=)",
+					"name": "operator.comparison.kind"
+				},
+				{
+					"match": "(!|&{1,2}|[|]{1,2})",
+					"name": "operator.logical.kind"
+				}
+			]
+		},
+		"values": {
+			"patterns": [{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			},
+			{
+				"name": "keyword.control.auxiliar.kind",
+				"match": "\\bopen\\b"
+			},
+			{
+				"name": "keyword.conditional.kind",
+				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
+			},
+			{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			}
+			]
+		},
+		"support": {
+			"patterns": [{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return|def)\\b"
+			},
+			{
+				"name": "keyword.control.auxiliar.kind",
+				"match": "\\bopen\\b"
+			},
+			{
+				"name": "keyword.conditional.kind",
+				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
+			},
+			{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			}
+			]
+		},
+		"types": {
+			"patterns": [{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			},
+			{
+				"name": "keyword.control.auxiliar.kind",
+				"match": "\\bopen\\b"
+			},
+			{
+				"name": "keyword.conditional.kind",
+				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
+			},
+			{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			}
+			]
+		},
+		"punctuations": {
+			"patterns": [{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			},
+			{
+				"name": "keyword.control.auxiliar.kind",
+				"match": "\\bopen\\b"
+			},
+			{
+				"name": "keyword.conditional.kind",
+				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
+			},
+			{
+				"name": "keyword.control.kind",
+				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
+			}
+			]
+		}
+	},
+	"scopeName": "source.kind"
+}
