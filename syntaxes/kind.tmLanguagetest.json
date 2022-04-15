@@ -1,194 +1,132 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "kind",
 	"patterns": [
 		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		},
-		{
-			"include": "#variables"
-		},
-		{
-			"include": "#operators"
-		},
-		{
-			"include": "#values"
-		},
-		{
-			"include": "#support"
-		},
-		{
-			"include": "#types"
-		},
-		{
-			"include": "#punctuations"
+			"include": "#main"
 		}
-		
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			},
-			{
-				"name": "keyword.control.auxiliar.kind",
-				"match": "\\bopen\\b"
-			},
-			{
-				"name": "keyword.conditional.kind",
-				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
-			},
-			{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			},
-      {
-        "match" : "(\\btype\\s|\\blet\\s|\\bdef\\s)",
-        "name" : "keyword.other.kind"
-      },
-      {
-        "match" : "(\\bopen\\s)",
-        "name" : "keyword.control.auxiliar.kind"
-      },
-      {
-        "match" : "(\\bsucc\\b|\\brefl\\b|\\bzero\\b|\\bcomm\\b|\\bbind\\b|\\bpure\\b|\\bnil\\b|\\bpred\\b|\\badd\\b|\\bcons\\b|\\bnew\\b|\\bhead\\b|\\btail\\b|\\bfst\\b|\\bsnd\\b|\\bsize\\b|\\bapply\\b|\\bkay\\b|\\bmap\\b|\\bsum\\b|\\bdefault\\b|\\b_\\b|\\bsome\\b|\\bnone\\b|\\bconcat\\b|\\brewrite\\b|\\sub\\b|\\bmul\\b|\\bdiv\\b|\\bltn\\b|\\blte\\b|\\beql\\b|\\bgte\\b|\\band\\b|\\bor\\b|\\bvalue\\b|\\bobj\\b)",
-        "name" : "keyword.auxiliar.kind"
-      },
-      {
-        "match" : "(\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s)",
-        "name" : "keyword.conditional.kind"
-      }
-  
-			]
-		},
-		"strings": {
-			"name": "string.quoted.double.kind",
-			"begin": "\"",
-			"end": "\"",
+		"main": {
 			"patterns": [
 				{
-					"name": "constant.character.escape.kind",
-					"match": "\\\\."
+					"include": "#comment"
+				},
+				{
+					"include": "#keyword"
+				},
+				{
+					"include": "#numeric"
+				},
+				{
+					"include": "#punctuation"
+				},
+				{
+					"include": "#string"
+				},
+				{
+					"include": "#support"
 				}
 			]
 		},
-		"variables": {
-			"patterns": [{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			},
-			{
-				"name": "keyword.control.auxiliar.kind",
-				"match": "\\bopen\\b"
-			},
-			{
-				"name": "keyword.conditional.kind",
-				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
-			},
-			{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			}
-			]
-		},
-		"operator": {
+		"comment": {
 			"patterns": [
 				{
-					"match": "(\\-|\\+|\\*|\\/|%\\/%|%%|%\\*%|%in%|%o%|%x%|\\^)",
-					"name": "operator.arithmetic.kind"
-				},
-				{
-					"match": "(=|<-|<<-|->|->>)",
-					"name": "operator.assignment.kind"
-				},
-				{
-					"match": "(==|!=|<>|<|>|<=|>=)",
-					"name": "operator.comparison.kind"
-				},
-				{
-					"match": "(!|&{1,2}|[|]{1,2})",
-					"name": "operator.logical.kind"
+					"name": "comment.line.double-slash.kind",
+					"match": "((\\s*|\\t*)//.*)"
 				}
 			]
 		},
-		"values": {
-			"patterns": [{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			},
-			{
-				"name": "keyword.control.auxiliar.kind",
-				"match": "\\bopen\\b"
-			},
-			{
-				"name": "keyword.conditional.kind",
-				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
-			},
-			{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			}
+		"keyword": {
+			"patterns": [
+				{
+					"name": "keyword.control.flow.kind",
+					"match": "\\b(if|then|else|case|for|in|with|open|type|let|def)\\b"
+				},
+				{
+					"name": "keyword.operator.arithmetic.kind",
+					"match": "\\b(\\*\\* | \\* | \\+ | - | % | // | / | @)\\b"
+				}
+			]
+		},
+		"numeric": {
+			"name": "constant.numeric.kind",
+			"patterns": [
+				{
+					"include": "#numeric-float"
+				},
+				{
+					"include": "#numeric-dec"
+				},
+				{
+					"include": "#numeric-hex"
+				},
+				{
+					"include": "#numeric-oct"
+				},
+				{
+					"include": "#numeric-bin"
+				},
+				{
+					"name": "invalid.illegal.name.python",
+					"match": "\\b[0-9]+\\w+"
+				}
+			]
+		},
+		"numeric-float": {
+			"name": "constant.numeric.float.kind",
+			"match": "(?x)\n  (?<! \\w)(?:\n    (?:\n      \\.[0-9](?: _?[0-9] )*\n      |\n      [0-9](?: _?[0-9] )* \\. [0-9](?: _?[0-9] )*\n      |\n      [0-9](?: _?[0-9] )* \\.\n    ) (?: [eE][+-]?[0-9](?: _?[0-9] )* )?\n    |\n    [0-9](?: _?[0-9] )* (?: [eE][+-]?[0-9](?: _?[0-9] )* )\n  )([jJ])?\\b\n"
+		},
+		"numeric-dec": {
+			"name": "constant.numeric.dec.kind",
+			"match": "(?x)\n  (?<![\\w\\.])(?:\n      [1-9](?: _?[0-9] )*\n      |\n      0+\n      |\n      [0-9](?: _?[0-9] )* ([jJ])\n      |\n      0 ([0-9]+)(?![eE\\.])\n  )\\b\n"
+		},
+		"numeric-hex": {
+			"name": "constant.numeric.hex.kind",
+			"match": "(?x)\n  (?<![\\w\\.])\n    (0[xX]) (_?[0-9a-fA-F])+\n  \\b\n"
+		},
+		"numeric-oct": {
+			"name": "constant.numeric.oct.kind",
+			"match": "(?x)\n  (?<![\\w\\.])\n    (0[oO]) (_?[0-7])+\n  \\b\n"
+		},
+		"numeric-bin": {
+			"name": "constant.numeric.bin.kind",
+			"match": "(?x)\n  (?<![\\w\\.])\n    (0[bB]) (_?[01])+\n  \\b\n"
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.definition.list.kind",
+					"match": "(\\[|\\])"
+				},
+				{
+					"name": "punctuation.definition.pair.kind",
+					"match": "(\\{|\\})"
+				},
+				{
+					"name": "punctuation.separator.colon.python",
+					"match": ":"
+				},
+				{
+					"name": "punctuation.separator.element.python",
+					"match": ","
+				}
+			]
+		},
+		"string": {
+			"patterns": [
+				{
+					"name": "string.quoted.single.kind",
+					"begin": "(\\'|\\\")",
+					"end": "(\\1)|(\\n)"
+				}
 			]
 		},
 		"support": {
-			"patterns": [{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return|def)\\b"
-			},
-			{
-				"name": "keyword.control.auxiliar.kind",
-				"match": "\\bopen\\b"
-			},
-			{
-				"name": "keyword.conditional.kind",
-				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
-			},
-			{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			}
-			]
-		},
-		"types": {
-			"patterns": [{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			},
-			{
-				"name": "keyword.control.auxiliar.kind",
-				"match": "\\bopen\\b"
-			},
-			{
-				"name": "keyword.conditional.kind",
-				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
-			},
-			{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			}
-			]
-		},
-		"punctuations": {
-			"patterns": [{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			},
-			{
-				"name": "keyword.control.auxiliar.kind",
-				"match": "\\bopen\\b"
-			},
-			{
-				"name": "keyword.conditional.kind",
-				"match": "\\bif\\s|\\bthen\\b|\\belse\\b|\\bcase\\b|for\\s|\\sin\\s|\\with\\s"
-			},
-			{
-				"name": "keyword.control.kind",
-				"match": "\\b(let|open|case|with|for|in|as|switch|type|if|then|else|def|while|return)\\b"
-			}
+			"patterns": [
+				{
+					"name": "support.type.kind",
+					"match": "\\b(And|App|Array|BBT|BVH|Bits|BitsMap|BitsSet|Bool|Buffer32|Buffer8|Bytes|Char|Cmp|Col32|Continuation|DOM|Date|Decidable|Deserializer|Device|Dyadic|Dynamic|Either|Either3|Empty|Equal|F32|F64|Fin|Function|Functor|GMap|GPT3|GSet|HSL|I128|I16|I256|I32|I64|I8|IO|Int|JSON|Lambda|Lex|List|Main|Map|Matrix|Maybe|Module|Monad|Monoid|Nat|NatMap|NatSet|Not|Or|Pair|Parser|PixelFont|Polygon|Pos32|PriorityQueue|Problems|Queue|Refinement|Result|Segment|Serializer|Set|Shape|Sigma|String|Stringifier|Submonoid|Subset|Test|TestSuite|The|Trampoline|Triple|Type|U1024|U128|U16|U256|U32|U32Map|U64|U8|Unit|V2|V3|Variadic|Vector|VoxBox|Word)\\b"
+				}
 			]
 		}
 	},
